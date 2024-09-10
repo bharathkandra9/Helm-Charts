@@ -1,0 +1,13 @@
+# templates/configmap-datasources.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-datasources
+  labels:
+    app: {{ .Release.Name }}
+    grafana_datasource: "1"
+data:
+  prometheus-datasource.yaml: |
+{{ .Values.datasources.prometheus | indent 4 }}
+  cloudwatch-datasource.yaml: |
+{{ .Values.datasources.cloudwatch | indent 4 }}

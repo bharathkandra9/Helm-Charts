@@ -1,0 +1,24 @@
+
+
+# Grafana image settings
+image:
+  repository: grafana/grafana
+  tag: 11.1.3
+  pullPolicy: IfNotPresent
+
+# Service settings
+service:
+  type: ClusterIP
+  port: 80
+
+# Admin user settings
+adminUser: admin
+adminPassword: admin
+
+ingress:
+  monitoring:
+    enabled: false
+
+
+datasources:
+  # put you datasources here 
